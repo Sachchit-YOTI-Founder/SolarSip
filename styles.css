@@ -1,0 +1,778 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(255, 242, 143);
+    color: #e7e7e7;
+    min-height: 100vh;
+    line-height: 1.5;
+    /* text-align: center */
+
+}
+
+/* Gradient Image Styling */
+.image-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.layer-blur {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px white;
+    rotate: -30deg;
+    z-index: -1;
+}
+
+/* Container Styling */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+/* Header Styling */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: black;
+}
+
+nav {
+    display: flex;
+    gap: 3rem;
+    margin-left: -5%;
+
+}
+
+nav a {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    color: black;
+    z-index: 999;
+
+}
+
+nav a:hover {
+    color: #a7a7a7;
+}
+
+.btn-signin {
+    position: relative;
+    z-index: 1000;
+   background-color: #F25757;
+   color: white;
+   padding: 0.8rem 2rem;
+   border-radius: 50px;
+   border: none;
+   font-size: 1rem;
+   font-weight: 500;
+   transition: background-color 0.2s ease;
+   cursor: pointer;
+
+}
+
+.btn-signin:hover {
+    background-color: #04C4D9;
+}
+
+/* Main Section Styling */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(90vh - 6rem);
+}
+
+.content {
+    max-width: 40rem;
+    margin-left: 10%;
+    z-index: 999;
+}
+
+.tag-box {
+    position: relative;
+    width: 18rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(to right, #F25757, #F2B705, #F2CB05, #04C4D9, #024059 );
+    background-size: 200%;
+    animation: animateGradient 2.5s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes animateGradient {
+    to {
+        background-position: 200%;
+    }
+}
+
+.tag-box .tag {
+    position: absolute;
+    inset: 3px 3px 3px 3px;
+    background-color: rgb(255, 242, 143);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    color: black;
+    justify-content: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.tag-box:hover .tag {
+    color: #2b0000;
+}
+
+.content h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin: 2rem 0;
+    color: black;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
+}
+
+.description {
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+    max-width: 35rem;
+    color: gray;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.btn-get-started {
+    text-decoration: none;
+    border: 1px solid #2a2a2a;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s ease;
+}
+
+.btn-get-started:hover {
+    background-color: #1a1a1a;
+}
+
+.btn-signing-main {
+    text-decoration: none;
+    background-color: lightgray;
+    color: black;
+    padding: 0.6rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s ease;
+}
+
+
+.btn-get-started:hover {
+    background-color: gray;
+}
+
+.robot-3d {
+    position: absolute;
+    top: 0;
+    right: -30%;
+}
+
+.robot-3d4 {
+    position: absolute;
+    top: 0;
+    right: -30%;
+    width: 150%;  /* increase this value */
+}
+
+/* tablet responsive */
+@media (max-width: 1300px) {
+    header {
+        padding: 1rem 0.5rem;
+    }
+
+    .content {
+        margin-top: 85%;
+    }
+
+    .robot-3d {
+        scale: 0.8;
+        top: -5%;
+        right: 25%;
+    }
+    
+}
+
+/* mobile responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0.1rem;
+    }
+
+    nav {
+        display: none;
+
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .btn-signin {
+        padding: 0.6rem 1.5rem;
+    }
+    
+    .content {
+        margin-top: 25rem;
+    }
+
+    .robot-3d {
+        scale: 0.5;
+        top: -15%;
+        right: 55%;
+    }
+
+    .content {
+        max-width: 30rem;
+        margin-left: 10%;
+    }
+
+    .tag-box {
+        width: 12rem;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .btn-get-started {
+        font-size: 0.8rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .btn-signing-main {
+        font-size: 0.8rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+    .games-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .info-section {
+        margin-top: 3rem;
+    }
+
+    .info-card {
+        width: 90%;
+    }
+}
+
+/* HERO BACKGROUND IMAGE */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container that holds blur behind text */
+.hero-blur-wrapper {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 140%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* Container that holds circle behind text */
+.hero-circle-wrapper {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 140%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Actual blur image styling */
+.hero-blur-img {
+    width: 100%;
+    height: auto;
+    opacity: 0.99;
+    filter: blur(50px);
+}
+/* CAROUSEL STYLES */
+
+.carousel-container{
+    position: relative;
+    margin-top: 10px;
+    /* background-color: red; */
+}
+.carousel-list{
+    display: flex;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.carousel-item{
+    min-width: 100%;
+    max-height: 500px;
+    transition: transform 1s;
+    /* transform: translateX(-0%); */
+}
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-btn-Container{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.carousel-btn{
+    padding: 40px 15px;
+    font-size: 30px;
+    border:none;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carousel-container {
+    position: relative;
+    margin-top: 10px;
+    overflow: hidden; /* important to clip the fade edges */
+}
+.carousel-container::before,
+.carousel-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* ::before will handle left & top fades */
+.carousel-container::before {
+    background:
+        linear-gradient(to right, black, rgba(0,0,0,0) 80px),   /* left fade */
+        linear-gradient(to bottom, black, rgba(0,0,0,0) 80px);  /* top fade */
+}
+
+/* ::after will handle right & bottom fades */
+.carousel-container::after {
+    background:
+        linear-gradient(to left, black, rgba(0,0,0,0) 80px),    /* right fade */
+        linear-gradient(to top, black, rgba(0,0,0,0) 80px);     /* bottom fade */
+}
+
+
+/* Full-width container */
+.explore-container {
+  width: 100%;
+  padding: 70px 20px;
+  background-color: white;
+}
+/* 
+.explore-container {
+  width: 100%;
+  padding: 70px 20px;
+
+  background-image: url("your-image-path.jpg");
+  background-size: cover;        
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+ */
+
+.explore-container h1 {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 36px;
+  color: #111;
+}
+
+/* Category Pills */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 50px;
+}
+
+.pill {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #111;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.pill:hover {
+  background: #f5f5f5;
+}
+
+.pill.active {
+  background: #1ecad3;
+  color: #fff;
+  border-color: #1ecad3;
+}
+
+/* Center grid but allow full-width background */
+.cards-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* Image */
+.image {
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  display: block;
+}
+
+/* Staff Pick Badge */
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+}
+
+/* Card Content */
+.card-content {
+  padding: 16px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.card-content h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  color: black;
+}
+
+.card-content p {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* =========================
+   REVIEW SECTION – DARK THEME
+========================= */
+.review-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 70px;
+    padding: 140px 8%;
+    position: relative;
+    overflow: hidden;
+
+    background: rgb(255, 242, 143);
+}
+
+
+/* Subtle glow behind section */
+.review-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at 70% 40%,
+        rgba(66,167,164,0.18),
+        transparent 60%
+    );
+    z-index: 0;
+}
+
+/* LEFT TEXT */
+.review-section .review-intro {
+    z-index: 2;
+}
+
+.review-section .review-intro h1 {
+    font-size: 3rem;
+    margin: 20px 0 10px;
+    color: #000000;
+}
+
+.review-section .review-intro p {
+    color: #131313;
+    max-width: 380px;
+}
+
+.review-section .stars {
+    color: #04C4D9;
+    font-size: 22px;
+}
+
+/* NAV */
+.review-section .review-nav {
+    margin-top: 32px;
+    display: flex;
+    gap: 14px;
+}
+
+.review-section .review-nav button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #024059;
+    cursor: pointer;
+    background: #04C4D9;
+    color: #e7e7e7;
+    font-size: 20px;
+    transition: all 0.25s ease;
+}
+
+.review-section .review-nav button:hover {
+    background: #024059;
+    border-color: #04C4D9;
+}
+
+/* =========================
+   CARD STACK
+========================= */
+
+.review-stack {
+    position: relative;
+    height: 440px;
+    z-index: 2;
+    margin-left: 200px;
+}
+
+/* CARD */.review-card {
+    position: absolute;
+    top: 0;
+    width: 470px;
+    height: 440px;
+    padding: 34px;
+    border-radius: 26px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: white;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.25);
+
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+
+/* CONTENT */
+.review-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    color: white;
+}
+
+.review-role {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.review-quote {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: white;
+}
+
+
+/* FOOTER BADGE */
+.review-footer {
+    background: #04C4D9;
+    border: 1px solid #024059;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: #d6ffff;
+    box-shadow: 0 0 12px #02405954;
+}
+
+/* STACK POSITIONS *//* Front card */
+.review-pos-0 {
+    background: #F25757; /* coral red */
+    transform: translateX(0) scale(1);
+    z-index: 3;
+}
+
+/* Middle card */
+.review-pos-1 {
+    background: #F2B705; /* warm orange */
+    transform: translateX(70px) scale(0.95);
+    z-index: 2;
+    opacity: 0.9;
+}
+
+/* Back card */
+.review-pos-2 {
+    background: #04C4D9; /* teal */
+    transform: translateX(140px) scale(0.9);
+    z-index: 1;
+    opacity: 0.85;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .review-section {
+        grid-template-columns: 1fr;
+        padding: 100px 6%;
+        gap: 50px;
+    }
+
+    .review-stack {
+        height: 400px;
+    }
+
+    .review-card {
+        width: 320px;
+        height: 400px;
+    }
+}
+
+
+/* =========================
+   DASHBOARD EXTENSIONS
+========================= */
+
+.dashboard-stats .card {
+  text-align: center;
+}
+
+.dashboard-stats h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.dashboard-stats p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #00c5b1;
+}
+
+/* Make white sections feel intentional */
+.explore-container {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   DASHBOARD EXTENSIONS
+========================= */
+
+.dashboard-stats .card {
+  text-align: center;
+}
+
+.dashboard-stats h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.dashboard-stats p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #00c5b1;
+}
+
+/* Make white sections feel intentional */
+.explore-container {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
